@@ -7,10 +7,10 @@ class AlarmClock {
 
     addClock(time, callback, id) {
 
-        if (id === undefined) throw new Error('Невозможно идентифицировать будильник. Параметр id не передан.');
+        if (id === undefined) throw new Error('Отсутствуют обязательные аргументы');
         
         if (this.alarmCollection.find(element => element.id === id)) {
-            console.error('Будильник с таким id уже существует.');
+            console.warn('Уже присутствует звонок на это же время');
             return;
         }
 
